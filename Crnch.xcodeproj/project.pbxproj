@@ -13,6 +13,7 @@
 		23B5E4261FB78758002AB865 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23B5E4251FB78758002AB865 /* Assets.xcassets */; };
 		23B5E4291FB78758002AB865 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23B5E4271FB78758002AB865 /* LaunchScreen.storyboard */; };
 		23B5E4341FB78758002AB865 /* CrnchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B5E4331FB78758002AB865 /* CrnchTests.swift */; };
+		23B5E43F1FB7876E002AB865 /* License.txt in Resources */ = {isa = PBXBuildFile; fileRef = 23B5E43E1FB7876E002AB865 /* License.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		23B5E42F1FB78758002AB865 /* CrnchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CrnchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		23B5E4331FB78758002AB865 /* CrnchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrnchTests.swift; sourceTree = "<group>"; };
 		23B5E4351FB78758002AB865 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		23B5E43E1FB7876E002AB865 /* License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = License.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 		23B5E4121FB78758002AB865 = {
 			isa = PBXGroup;
 			children = (
+				23B5E43E1FB7876E002AB865 /* License.txt */,
 				23B5E41D1FB78758002AB865 /* Crnch */,
 				23B5E4321FB78758002AB865 /* CrnchTests */,
 				23B5E41C1FB78758002AB865 /* Products */,
@@ -179,6 +182,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23B5E43F1FB7876E002AB865 /* License.txt in Resources */,
 				23B5E4291FB78758002AB865 /* LaunchScreen.storyboard in Resources */,
 				23B5E4261FB78758002AB865 /* Assets.xcassets in Resources */,
 				23B5E4241FB78758002AB865 /* Main.storyboard in Resources */,
