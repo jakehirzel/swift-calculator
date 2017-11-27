@@ -9,6 +9,13 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    // MARK: Properties
+    
+    var calcLogic = CalcLogic()
+    
+    
+    // MARK: ViewController Lifecycle / View Handling
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +26,11 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    // MARK: Convenience
+    
+    
+    // MARK: Actions
 
 
 }
