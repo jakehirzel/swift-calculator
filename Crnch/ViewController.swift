@@ -12,6 +12,8 @@ class ViewController: UIViewController {
     
     // MARK: Properties
     
+    @IBOutlet weak var cursor: UIView!
+    
     var calcLogic = CalcLogic()
     
     
@@ -20,6 +22,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        // Make the cursor blink
+        cursor.blink()
+        
     }
 
     override func didReceiveMemoryWarning() {

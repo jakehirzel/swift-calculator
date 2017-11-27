@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="363" width="375" height="304"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" semanticContentAttribute="spatial" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="kjw-f0-RBB" userLabel="Keypad">
-                                        <rect key="frame" x="12.5" y="12" width="351" height="280"/>
+                                        <rect key="frame" x="12" y="12" width="351" height="280"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" semanticContentAttribute="spatial" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="JqW-E5-7fB">
                                                 <rect key="frame" x="0.0" y="0.0" width="351" height="48"/>
@@ -227,7 +227,7 @@
                                         </variation>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Hy-bA-JzK" userLabel="Left Keypad Spacer">
-                                        <rect key="frame" x="0.5" y="0.0" width="12" height="304"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="12" height="304"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="12" id="N5R-CZ-oVV"/>
                                         </constraints>
@@ -243,7 +243,7 @@
                                         </variation>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ngW-Ow-SJc" userLabel="Right Keypad Spacer">
-                                        <rect key="frame" x="363.5" y="0.0" width="12" height="304"/>
+                                        <rect key="frame" x="363" y="0.0" width="12" height="304"/>
                                         <viewLayoutGuide key="safeArea" id="jnL-1p-1im"/>
                                     </view>
                                 </subviews>
@@ -264,15 +264,38 @@
                                     <constraint firstAttribute="bottom" secondItem="4Hy-bA-JzK" secondAttribute="bottom" id="jqm-YD-b9f"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pzw-hc-eBE" userLabel="Cursor">
+                                <rect key="frame" x="339" y="309" width="12" height="30"/>
+                                <color key="backgroundColor" red="0.21176470589999999" green="0.21176470589999999" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="9LU-2v-wTW"/>
+                                    <constraint firstAttribute="width" constant="12" id="qXI-Db-n5f"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$" textAlignment="right" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rBf-Ma-fX5" userLabel="Input Text">
+                                <rect key="frame" x="12" y="307" width="315" height="35"/>
+                                <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="30"/>
+                                <color key="textColor" red="0.21176470589999999" green="0.21176470589999999" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.90196078430000004" blue="0.12549019610000001" alpha="0.86345079790000001" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="iQX-UB-ZCP" firstAttribute="trailing" secondItem="YLQ-I3-LDR" secondAttribute="trailing" id="7Pw-QQ-kkm"/>
+                            <constraint firstItem="YLQ-I3-LDR" firstAttribute="trailing" secondItem="pzw-hc-eBE" secondAttribute="trailing" constant="24" id="OWm-WO-BzI"/>
                             <constraint firstItem="iQX-UB-ZCP" firstAttribute="leading" secondItem="YLQ-I3-LDR" secondAttribute="leading" id="TUh-pU-b6G"/>
+                            <constraint firstItem="rBf-Ma-fX5" firstAttribute="centerY" secondItem="pzw-hc-eBE" secondAttribute="centerY" id="UoU-Cc-9uT"/>
+                            <constraint firstItem="iQX-UB-ZCP" firstAttribute="top" secondItem="pzw-hc-eBE" secondAttribute="bottom" constant="24" id="m3E-lt-bJ5"/>
+                            <constraint firstItem="rBf-Ma-fX5" firstAttribute="leading" secondItem="YLQ-I3-LDR" secondAttribute="leading" constant="12" id="qIG-RT-5xC"/>
                             <constraint firstItem="iQX-UB-ZCP" firstAttribute="bottom" secondItem="YLQ-I3-LDR" secondAttribute="bottom" id="u4y-dj-iLQ"/>
+                            <constraint firstItem="pzw-hc-eBE" firstAttribute="leading" secondItem="rBf-Ma-fX5" secondAttribute="trailing" constant="12" id="v6x-ny-yTG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YLQ-I3-LDR"/>
                     </view>
+                    <connections>
+                        <outlet property="cursor" destination="pzw-hc-eBE" id="t1a-aC-Rb9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <stackView opaque="NO" contentMode="scaleToFill" semanticContentAttribute="spatial" distribution="fillEqually" id="zGp-sV-qx6">
@@ -315,6 +338,7 @@
                     <viewLayoutGuide key="safeArea" id="EBp-1e-y6i"/>
                 </stackView>
             </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="33.733133433283363"/>
         </scene>
     </scenes>
 </document>
