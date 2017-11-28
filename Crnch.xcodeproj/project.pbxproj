@@ -16,6 +16,7 @@
 		23B5E4291FB78758002AB865 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23B5E4271FB78758002AB865 /* LaunchScreen.storyboard */; };
 		23B5E4341FB78758002AB865 /* CrnchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B5E4331FB78758002AB865 /* CrnchTests.swift */; };
 		23B5E43F1FB7876E002AB865 /* License.txt in Resources */ = {isa = PBXBuildFile; fileRef = 23B5E43E1FB7876E002AB865 /* License.txt */; };
+		23DE04C91FCD07A000508430 /* KeypadLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DE04C81FCD07A000508430 /* KeypadLogic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		23B5E4331FB78758002AB865 /* CrnchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrnchTests.swift; sourceTree = "<group>"; };
 		23B5E4351FB78758002AB865 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		23B5E43E1FB7876E002AB865 /* License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = License.txt; sourceTree = "<group>"; };
+		23DE04C81FCD07A000508430 /* KeypadLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeypadLogic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 				23B5E4201FB78758002AB865 /* ViewController.swift */,
 				23B5E4221FB78758002AB865 /* Main.storyboard */,
 				236C85711FCC667E0017AD1A /* CalcLogic.swift */,
+				23DE04C81FCD07A000508430 /* KeypadLogic.swift */,
 				234F79B31FCC950E0027DF48 /* CustomAnimation.swift */,
 				23B5E4251FB78758002AB865 /* Assets.xcassets */,
 				23B5E4271FB78758002AB865 /* LaunchScreen.storyboard */,
@@ -211,6 +214,7 @@
 			files = (
 				236C85721FCC667E0017AD1A /* CalcLogic.swift in Sources */,
 				23B5E4211FB78758002AB865 /* ViewController.swift in Sources */,
+				23DE04C91FCD07A000508430 /* KeypadLogic.swift in Sources */,
 				23B5E41F1FB78758002AB865 /* AppDelegate.swift in Sources */,
 				234F79B41FCC950E0027DF48 /* CustomAnimation.swift in Sources */,
 			);
