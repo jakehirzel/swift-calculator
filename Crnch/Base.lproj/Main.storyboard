@@ -334,6 +334,27 @@
                     </view>
                     <connections>
                         <outlet property="cursor" destination="pzw-hc-eBE" id="t1a-aC-Rb9"/>
+                        <outlet property="keyAdd" destination="g3S-Z4-68x" id="opX-GA-jMt"/>
+                        <outlet property="keyClear" destination="5jC-E1-X5f" id="7rY-tw-EJ3"/>
+                        <outlet property="keyDecimal" destination="8fQ-I4-1IZ" id="iFt-ez-feA"/>
+                        <outlet property="keyDivide" destination="PVa-1I-gkB" id="GkU-0O-fiB"/>
+                        <outlet property="keyEight" destination="hFE-zl-1eQ" id="wVj-nV-IfC"/>
+                        <outlet property="keyFive" destination="yoK-S5-spt" id="FKc-ew-sgV"/>
+                        <outlet property="keyFour" destination="qU6-NP-Qva" id="Jpk-8w-6hg"/>
+                        <outlet property="keyInfo" destination="pkh-wW-baz" id="4M8-vO-9hi"/>
+                        <outlet property="keyMultiply" destination="9tr-rK-TbU" id="sxB-kn-aei"/>
+                        <outlet property="keyNegate" destination="pGW-jG-IBP" id="I4A-KN-mTc"/>
+                        <outlet property="keyNine" destination="PDt-Pc-TL8" id="Rzr-Lr-RyD"/>
+                        <outlet property="keyOne" destination="gNQ-Am-CDu" id="Gav-hq-5LN"/>
+                        <outlet property="keySeven" destination="jWt-2A-k71" id="cdt-OQ-AxW"/>
+                        <outlet property="keySix" destination="5Lz-go-tMq" id="A80-hV-5Ye"/>
+                        <outlet property="keySquareRoot" destination="XrW-y9-GQd" id="9Ch-pb-Ay9"/>
+                        <outlet property="keySubtract" destination="K19-Au-sbi" id="YrC-2y-QZa"/>
+                        <outlet property="keyThree" destination="mJh-S0-qdp" id="gs5-1q-5Rf"/>
+                        <outlet property="keyTotal" destination="YAQ-ti-4bW" id="4ag-IG-ENJ"/>
+                        <outlet property="keyTwo" destination="zje-o5-ISn" id="Lzs-N4-cqT"/>
+                        <outlet property="keyZero" destination="0d9-Tm-xys" id="5bR-hb-jdO"/>
+                        <outlet property="mainText" destination="rBf-Ma-fX5" id="Hd4-Ue-KgS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
