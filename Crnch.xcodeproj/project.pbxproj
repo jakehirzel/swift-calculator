@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		234F79B41FCC950E0027DF48 /* CustomAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234F79B31FCC950E0027DF48 /* CustomAnimation.swift */; };
 		236C85721FCC667E0017AD1A /* CalcLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236C85711FCC667E0017AD1A /* CalcLogic.swift */; };
+		237721DA1FD456EF00DFC903 /* KeyTapLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237721D91FD456EF00DFC903 /* KeyTapLogic.swift */; };
+		237721DC1FD4594200DFC903 /* OperandsAndOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237721DB1FD4594200DFC903 /* OperandsAndOperators.swift */; };
 		23B5E41F1FB78758002AB865 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B5E41E1FB78758002AB865 /* AppDelegate.swift */; };
 		23B5E4211FB78758002AB865 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B5E4201FB78758002AB865 /* ViewController.swift */; };
 		23B5E4241FB78758002AB865 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23B5E4221FB78758002AB865 /* Main.storyboard */; };
@@ -16,7 +18,6 @@
 		23B5E4291FB78758002AB865 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23B5E4271FB78758002AB865 /* LaunchScreen.storyboard */; };
 		23B5E4341FB78758002AB865 /* CrnchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B5E4331FB78758002AB865 /* CrnchTests.swift */; };
 		23B5E43F1FB7876E002AB865 /* License.txt in Resources */ = {isa = PBXBuildFile; fileRef = 23B5E43E1FB7876E002AB865 /* License.txt */; };
-		23DE04C91FCD07A000508430 /* KeypadLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DE04C81FCD07A000508430 /* KeypadLogic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +33,8 @@
 /* Begin PBXFileReference section */
 		234F79B31FCC950E0027DF48 /* CustomAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAnimation.swift; sourceTree = "<group>"; };
 		236C85711FCC667E0017AD1A /* CalcLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcLogic.swift; sourceTree = "<group>"; };
+		237721D91FD456EF00DFC903 /* KeyTapLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyTapLogic.swift; sourceTree = "<group>"; };
+		237721DB1FD4594200DFC903 /* OperandsAndOperators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperandsAndOperators.swift; sourceTree = "<group>"; };
 		23B5E41B1FB78758002AB865 /* Crnch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crnch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23B5E41E1FB78758002AB865 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		23B5E4201FB78758002AB865 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -43,7 +46,6 @@
 		23B5E4331FB78758002AB865 /* CrnchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrnchTests.swift; sourceTree = "<group>"; };
 		23B5E4351FB78758002AB865 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		23B5E43E1FB7876E002AB865 /* License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = License.txt; sourceTree = "<group>"; };
-		23DE04C81FCD07A000508430 /* KeypadLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeypadLogic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,8 +91,9 @@
 				23B5E41E1FB78758002AB865 /* AppDelegate.swift */,
 				23B5E4201FB78758002AB865 /* ViewController.swift */,
 				23B5E4221FB78758002AB865 /* Main.storyboard */,
+				237721DB1FD4594200DFC903 /* OperandsAndOperators.swift */,
+				237721D91FD456EF00DFC903 /* KeyTapLogic.swift */,
 				236C85711FCC667E0017AD1A /* CalcLogic.swift */,
-				23DE04C81FCD07A000508430 /* KeypadLogic.swift */,
 				234F79B31FCC950E0027DF48 /* CustomAnimation.swift */,
 				23B5E4251FB78758002AB865 /* Assets.xcassets */,
 				23B5E4271FB78758002AB865 /* LaunchScreen.storyboard */,
@@ -213,8 +216,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				236C85721FCC667E0017AD1A /* CalcLogic.swift in Sources */,
+				237721DA1FD456EF00DFC903 /* KeyTapLogic.swift in Sources */,
 				23B5E4211FB78758002AB865 /* ViewController.swift in Sources */,
-				23DE04C91FCD07A000508430 /* KeypadLogic.swift in Sources */,
+				237721DC1FD4594200DFC903 /* OperandsAndOperators.swift in Sources */,
 				23B5E41F1FB78758002AB865 /* AppDelegate.swift in Sources */,
 				234F79B41FCC950E0027DF48 /* CustomAnimation.swift in Sources */,
 			);

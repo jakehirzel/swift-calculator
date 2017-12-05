@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     
     // MARK: Properties
     
-    @IBOutlet weak var mainText: UILabel!
+    @IBOutlet weak var mainOutputText: UILabel!
     
     @IBOutlet weak var keyClear: UIButton!
     @IBOutlet weak var keyNegate: UIButton!
@@ -41,10 +41,10 @@ class ViewController: UIViewController {
     var calcLogic = CalcLogic()
     
     // Create KeypadLogic() instance
-    let keypadLogic = KeypadLogic()
+    let keyTapLogic = KeyTapLogic()
     
-    // Create an operand and set it to zero
-    var currentOperand: Float = 0.0
+    // Create a mainOutputValue and set it to zero
+    var mainOutputVaue: Float = 0.0
     
     // MARK: ViewController Lifecycle / View Handling
 
