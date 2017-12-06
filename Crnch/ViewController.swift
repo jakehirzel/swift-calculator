@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     
     // MARK: Properties
     
-    @IBOutlet weak var mainOutputText: UILabel!
+    @IBOutlet weak var mainOutputLabel: UILabel!
     
     @IBOutlet weak var keyClear: UIButton!
     @IBOutlet weak var keyNegate: UIButton!
@@ -72,6 +72,8 @@ class ViewController: UIViewController {
     // MARK: Actions
 
     @IBAction func keyTapped(_ sender: UIButton) {
+        
+        mainOutputLabel.text = keyTapLogic.keypadButtonTapped(sender, keyTapped: .one, mainOutputIn: mainOutputLabel.text!)
         
     }
     

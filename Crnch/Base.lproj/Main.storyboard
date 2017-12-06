@@ -414,7 +414,7 @@
                         <outlet property="keyTotal" destination="YAQ-ti-4bW" id="4ag-IG-ENJ"/>
                         <outlet property="keyTwo" destination="zje-o5-ISn" id="Lzs-N4-cqT"/>
                         <outlet property="keyZero" destination="0d9-Tm-xys" id="5bR-hb-jdO"/>
-                        <outlet property="mainOutputText" destination="rBf-Ma-fX5" id="CwV-T8-x0N"/>
+                        <outlet property="mainOutputLabel" destination="rBf-Ma-fX5" id="CwV-T8-x0N"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
