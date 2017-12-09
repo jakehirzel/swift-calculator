@@ -31,8 +31,9 @@ enum OperandsAndOperators: String {
     case multiplication = "×"
     case division = "÷"
     case squareRoot = "√"
-    case negation = "+/−"
+    case negation = "+/-"
     case total = "="
+    case clear = "AC"
     case info = "iOS info button"
 
 }

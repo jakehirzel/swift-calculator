@@ -73,7 +73,7 @@ class ViewController: UIViewController {
 
     @IBAction func keyTapped(_ sender: UIButton) {
         
-        mainOutputLabel.text = keyTapLogic.keypadButtonTapped(sender, keyTapped: .one, mainOutputIn: mainOutputLabel.text!)
+        mainOutputLabel.text = keyTapLogic.keypadButtonTapped(sender, mainOutputIn: mainOutputLabel.text!)
         
     }
     
