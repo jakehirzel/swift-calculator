@@ -12,10 +12,14 @@ struct KeyTapLogic {
     
     func keypadButtonTapped(_ button: UIButton, mainOutputIn: String) -> (String) {
         
+        // Create CalcLogic() instance to handle operations
+        var calcLogic = CalcLogic()
+        
         // Check key title against OperandsAndOperators and unwrap
-        if let key: OperandsAndOperators = OperandsAndOperators(rawValue: (button.titleLabel?.text)!) {
+        if let keyTapped = OperandsAndOperators(rawValue: (button.titleLabel?.text)!) {
             
-            switch key {
+            // Appropriately route a valid key tap based on the type of key (i.e. operands, operators, etc...)
+            switch keyTapped {
             
             // Handle number taps
             case .one, .two, .three, .four, .five, .six, .seven, .eight, .nine, .zero, .point:
@@ -25,31 +29,52 @@ struct KeyTapLogic {
                     return mainOutputIn
                 }
                     
-                    // Only allow two characters after a .
-                else if mainOutputIn.count > 3 && mainOutputIn[(mainOutputIn.index(mainOutputIn.endIndex, offsetBy: -3))] == "." {
-                    return mainOutputIn
-                }
+//                    // Only allow two characters after a .
+//                else if mainOutputIn.count > 3 && mainOutputIn[(mainOutputIn.index(mainOutputIn.endIndex, offsetBy: -3))] == "." {
+//                    return mainOutputIn
+//                }
                     
                     // Limit to thousands place (plus optional decimal and change)
                 else if mainOutputIn.count == 5 && mainOutputIn.contains(".") == false && button.titleLabel?.text != "." {
                     return mainOutputIn
                 }
                     
-                    // Otherwise add the characters to both strings
+                    // Otherwise add the characters to the label
                 else {
                     var mainOutputOut = mainOutputIn
                     mainOutputOut.append(button.titleLabel!.text!)
                     return mainOutputOut
                 }
                 
-            // Handle operation taps
-            case .addition, .subtraction, .multiplication, .division, .negation, .squareRoot, .total, .clear, .info:
+            // Handle binary operation taps and clear
+            case .addition, .subtraction, .multiplication, .division, .clear:
                 
-                // TODO: Pass to CalcLogic & Update mainOutput
+                // Safely unwrap, cast mainOutputIn as a Float, and pass to nextCalc()
+                if let nextNumber = Float(mainOutputIn) {
+                    calcLogic.nextCalc(perform: keyTapped, by: nextNumber)
+                    return ""
+                }
+                else {
+                    return mainOutputIn
+                }
+                
+            // Handle unary operation taps
+            case .negation, .squareRoot:
+                
+                // TODO: Handle unary operations
                 return mainOutputIn
+            
+            // Handle total
+            case .total:
+                return String(calcLogic.runningTotal)
+            // Handle info
+            case .info:
                 
-            }
+                // TODO: Add info pane
+                return mainOutputIn
 
+            }
+            
         }
         
         // Gracefully return if unwrap fails

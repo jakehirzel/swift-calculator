@@ -36,15 +36,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var keyTotal: UIButton!
     
     @IBOutlet weak var cursor: UIView!
-    
-    // Create CalcLogic() instance
-    var calcLogic = CalcLogic()
-    
-    // Create KeypadLogic() instance
+        
+    // Create KeyTapLogic() instance
     let keyTapLogic = KeyTapLogic()
-    
-    // Create a mainOutputValue and set it to zero
-    var mainOutputVaue: Float = 0.0
     
     // MARK: ViewController Lifecycle / View Handling
 
@@ -58,6 +52,10 @@ class ViewController: UIViewController {
         
         // Make the cursor blink
         cursor.blink()
+        
+        // Reset the mainOutputLabel
+        // TODO: Does this need to reset to runningTotal if it exists?
+        mainOutputLabel.text = ""
         
     }
 
