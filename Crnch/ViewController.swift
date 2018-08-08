@@ -40,11 +40,15 @@ class ViewController: UIViewController {
     // Create KeyTapLogic() instance
     let keyTapLogic = KeyTapLogic()
     
+    // Create empty OperationLog instance
+    var operationLog = OperationLog(operationLog: [])
+    
     // MARK: ViewController Lifecycle / View Handling
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -71,7 +75,11 @@ class ViewController: UIViewController {
 
     @IBAction func keyTapped(_ sender: UIButton) {
         
-        mainOutputLabel.text = keyTapLogic.keypadButtonTapped(sender, mainOutputIn: mainOutputLabel.text!)
+        // Run keypadButtonTapped and save output
+        // Assign text to mainOutputLabel
+        // Update operationLog
+        
+        mainOutputLabel.text = keyTapLogic.keypadButtonTapped(sender, mainOutputIn: mainOutputLabel.text!, operationLogIn: operationLog).mainOutputOut
         
     }
     

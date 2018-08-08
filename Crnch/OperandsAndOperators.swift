@@ -35,6 +35,15 @@ enum OperandsAndOperators: String {
     case total = "="
     case clear = "AC"
     case info = "iOS info button"
+        
+}
 
+// Create structs to define the OperationLog structure
+
+struct Operation {
+    let operation: (number: String, operation: OperandsAndOperators)
+}
+struct OperationLog {
+    var operationLog: [Operation]
 }
 
