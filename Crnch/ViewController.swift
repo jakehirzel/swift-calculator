@@ -75,8 +75,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     // MARK: UITableViewDataSource Protocol
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-//        return operationLog.operationLog.count
+        return operationLog.operationLog.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -111,7 +110,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         mainOutputLabel.text = operationLog.operationLog.last?.mainOutput
         
         // Update tapeTable
-        self.tapeTable.reloadData()
+        tapeTable.reloadData()
         
     }
     
