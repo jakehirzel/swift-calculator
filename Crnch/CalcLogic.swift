@@ -10,6 +10,8 @@ import Foundation
 
 struct CalcLogic {
     
+    // TODO: Current runningTotal needs to be passed in every time from the operationLog
+    
     // Create running total variable with public getter and private setter access level
     public private(set) var runningTotal: Float = 0.0
     

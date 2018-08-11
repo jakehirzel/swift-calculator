@@ -76,10 +76,12 @@ class ViewController: UIViewController {
     @IBAction func keyTapped(_ sender: UIButton) {
         
         // Run keypadButtonTapped and save output
+        operationLog = keyTapLogic.keypadButtonTapped(sender, mainOutputIn: mainOutputLabel.text!, operationLogIn: operationLog)
         // Assign text to mainOutputLabel
+        mainOutputLabel.text = operationLog.operationLog.last?.number
         // Update operationLog
         
-        mainOutputLabel.text = keyTapLogic.keypadButtonTapped(sender, mainOutputIn: mainOutputLabel.text!, operationLogIn: operationLog).mainOutputOut
+//        mainOutputLabel.text = keyTapLogic.keypadButtonTapped(sender, mainOutputIn: mainOutputLabel.text!, operationLogIn: operationLog).mainOutputOut
         
     }
     

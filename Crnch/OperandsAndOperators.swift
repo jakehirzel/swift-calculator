@@ -41,7 +41,8 @@ enum OperandsAndOperators: String {
 // Create structs to define the OperationLog structure
 
 struct Operation {
-    let operation: (number: String, operation: OperandsAndOperators)
+    var number: String
+    let operation: OperandsAndOperators
 }
 struct OperationLog {
     var operationLog: [Operation]
