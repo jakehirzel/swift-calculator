@@ -10,10 +10,10 @@ import UIKit
 
 struct KeyTapLogic {
     
-    func keypadButtonTapped(_ button: UIButton, mainOutputIn: String, operationLogIn: OperationLog) -> OperationLog {
-        
-        // Create CalcLogic() instance to handle operations
-        var calcLogic = CalcLogic()
+    // Create CalcLogic() instance to handle operations
+    var calcLogic = CalcLogic()
+    
+    mutating func keypadButtonTapped(_ button: UIButton, mainOutputIn: String, operationLogIn: OperationLog) -> OperationLog {
         
         // Check key title against OperandsAndOperators and unwrap
         if let keyTapped = OperandsAndOperators(rawValue: (button.titleLabel?.text)!) {
@@ -48,13 +48,17 @@ struct KeyTapLogic {
                 }
                 
             // Handle binary operation taps and clear
-            case .addition, .subtraction, .multiplication, .division, .clear:
+            case .addition, .subtraction, .multiplication, .division:
                 
-                // Check prior
+                // Return if log is empty
+                if currentOperationLog.operationLog.isEmpty {
+                    return currentOperationLog
+                }
                 
-                // Safely unwrap, cast mainOutputIn as a Float, and pass to nextCalc()
-                if let nextNumber = Float(mainOutputIn) {
+                // Safely unwrap, cast number in currentOperation as a Float, and pass to nextCalc()
+                if let nextNumber = Float(currentOperation.number) {
                     calcLogic.nextCalc(perform: keyTapped, by: nextNumber)
+//                    currentOperationLog.operationLog.append(currentOperation)
                     return currentOperationLog
 //                    return (mainOutputOut: String(calcLogic.runningTotal), operation: keyTapped)
                 }
@@ -64,15 +68,27 @@ struct KeyTapLogic {
                 }
                 
             // Handle unary operation taps
-            case .negation, .squareRoot:
-                
+            case .negation, .squareRoot, .clear:
+
+                // Return if log is empty
+                if currentOperationLog.operationLog.isEmpty {
+                    return currentOperationLog
+                }
+
                 // TODO: Handle unary operations
                 return currentOperationLog
 
             // Handle total
             case .total:
+
+                // Return if log is empty
+                if currentOperationLog.operationLog.isEmpty {
+                    return currentOperationLog
+                }
+
                 return currentOperationLog
 //                return (mainOutputOut: String(calcLogic.runningTotal), operation: keyTapped)
+
             // Handle info
             case .info:
                 

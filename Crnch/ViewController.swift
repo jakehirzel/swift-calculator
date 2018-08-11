@@ -38,7 +38,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var cursor: UIView!
         
     // Create KeyTapLogic() instance
-    let keyTapLogic = KeyTapLogic()
+    var keyTapLogic = KeyTapLogic()
     
     // Create empty OperationLog instance
     var operationLog = OperationLog(operationLog: [])
