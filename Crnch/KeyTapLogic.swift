@@ -19,7 +19,7 @@ struct KeyTapLogic {
         if let keyTapped = OperandsAndOperators(rawValue: (button.titleLabel?.text)!) {
             
             // Create an Operation and assign operationLogIn to a working OperationLog variable
-            var currentOperation = Operation(number: mainOutputIn, operation: keyTapped)
+            var currentOperation = Operation(number: mainOutputIn, operation: keyTapped, mainOutput: mainOutputIn)
             var currentOperationLog = operationLogIn
             
             // Appropriately route a valid key tap based on the type of key (i.e. operands, operators, etc...)
@@ -40,9 +40,10 @@ struct KeyTapLogic {
                     return currentOperationLog
                 }
                     
-                // Otherwise add the characters to the number and append to the log
+                // Otherwise add the characters to the number, update mainOutput, and append to the log
                 else {
                     currentOperation.number.append(button.titleLabel!.text!)
+                    currentOperation.mainOutput = currentOperation.number
                     currentOperationLog.operationLog.append(currentOperation)
                     return currentOperationLog
                 }
@@ -55,12 +56,25 @@ struct KeyTapLogic {
                     return currentOperationLog
                 }
                 
-                // Safely unwrap, cast number in currentOperation as a Float, and pass to nextCalc()
+                // Safely unwrap, cast number in currentOperation as a Float
                 if let nextNumber = Float(currentOperation.number) {
+                    
+                    // Pass to nextCalc()
                     calcLogic.nextCalc(perform: keyTapped, by: nextNumber)
-//                    currentOperationLog.operationLog.append(currentOperation)
+                    
+                    // Update mainOutput with runningTotal
+                    currentOperation.mainOutput = String(calcLogic.runningTotal)
+                    
+                    // Remove trailing .0 from float cast to string, if any
+                    if currentOperation.mainOutput[currentOperation.mainOutput.index(currentOperation.mainOutput.endIndex, offsetBy: -1)] == "0" && currentOperation.mainOutput[currentOperation.mainOutput.index(currentOperation.mainOutput.endIndex, offsetBy: -2)] == "." {
+                        currentOperation.mainOutput.removeLast(2)
+                    }
+                    
+                    // Update log
+                    currentOperationLog.operationLog.append(currentOperation)
+                    
                     return currentOperationLog
-//                    return (mainOutputOut: String(calcLogic.runningTotal), operation: keyTapped)
+                    
                 }
                 else {
                     return currentOperationLog

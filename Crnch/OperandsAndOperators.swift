@@ -43,6 +43,7 @@ enum OperandsAndOperators: String {
 struct Operation {
     var number: String
     let operation: OperandsAndOperators
+    var mainOutput: String
 }
 struct OperationLog {
     var operationLog: [Operation]

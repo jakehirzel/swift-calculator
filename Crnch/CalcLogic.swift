@@ -13,7 +13,7 @@ struct CalcLogic {
     // TODO: Current runningTotal needs to be passed in every time from the operationLog
     
     // Create running total variable with public getter and private setter access level
-    public private(set) var runningTotal: Float = 0.0
+    public private(set) var runningTotal: Float = 0
     
     // Create mutating function to modify the runningTotal based on the desired operation
     mutating func nextCalc(perform nextOperation: OperandsAndOperators, by nextNumber: Float = 0.0) {

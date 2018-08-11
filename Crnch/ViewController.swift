@@ -78,7 +78,7 @@ class ViewController: UIViewController {
         // Run keypadButtonTapped and save output
         operationLog = keyTapLogic.keypadButtonTapped(sender, mainOutputIn: mainOutputLabel.text!, operationLogIn: operationLog)
         // Assign text to mainOutputLabel
-        mainOutputLabel.text = operationLog.operationLog.last?.number
+        mainOutputLabel.text = operationLog.operationLog.last?.mainOutput
         // Update operationLog
         
 //        mainOutputLabel.text = keyTapLogic.keypadButtonTapped(sender, mainOutputIn: mainOutputLabel.text!, operationLogIn: operationLog).mainOutputOut
