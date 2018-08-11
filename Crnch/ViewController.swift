@@ -8,11 +8,13 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-    
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
     // MARK: Properties
     
     @IBOutlet weak var mainOutputLabel: UILabel!
+    
+    @IBOutlet weak var tapeTable: UITableView!
     
     @IBOutlet weak var keyClear: UIButton!
     @IBOutlet weak var keyNegate: UIButton!
@@ -40,14 +42,16 @@ class ViewController: UIViewController {
     // Create KeyTapLogic() instance
     var keyTapLogic = KeyTapLogic()
     
-    // Create empty OperationLog instance
-    var operationLog = OperationLog(operationLog: [])
+    // Create empty OperationLog instance and populate with blank Operation
+    var operationLog = OperationLog(operationLog: [Operation(number: "", operation: .addition, mainOutput: "")])
     
     // MARK: ViewController Lifecycle / View Handling
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        tapeTable.delegate = self
+        tapeTable.dataSource = self
         
     }
     
@@ -66,6 +70,21 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: UITableViewDataSource Protocol
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+//        return operationLog.operationLog.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "tapeCell", for: indexPath)
+        let row = indexPath.row
+        cell.textLabel?.text = operationLog.operationLog[row].mainOutput
+        cell.detailTextLabel?.text = operationLog.operationLog[row].operation.rawValue
+        return cell
     }
     
     // MARK: Convenience
@@ -87,11 +106,12 @@ class ViewController: UIViewController {
         
         // Run keypadButtonTapped and save output
         operationLog = keyTapLogic.keypadButtonTapped(sender, mainOutputIn: mainOutputLabel.text!, operationLogIn: operationLog)
+        
         // Assign text to mainOutputLabel
         mainOutputLabel.text = operationLog.operationLog.last?.mainOutput
-        // Update operationLog
         
-//        mainOutputLabel.text = keyTapLogic.keypadButtonTapped(sender, mainOutputIn: mainOutputLabel.text!, operationLogIn: operationLog).mainOutputOut
+        // Update tapeTable
+        self.tapeTable.reloadData()
         
     }
     
