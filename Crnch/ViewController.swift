@@ -75,6 +75,16 @@ class ViewController: UIViewController {
 
     @IBAction func keyTapped(_ sender: UIButton) {
         
+        // Clear mainOutputLabel on number tap if previous action exists and was an operation
+        if let lastOperation = operationLog.operationLog.last?.operation {
+            switch lastOperation {
+            case .addition, .subtraction, .multiplication, .division, .negation, .squareRoot:
+                mainOutputLabel.text = ""
+            default:
+                break
+            }
+        }
+        
         // Run keypadButtonTapped and save output
         operationLog = keyTapLogic.keypadButtonTapped(sender, mainOutputIn: mainOutputLabel.text!, operationLogIn: operationLog)
         // Assign text to mainOutputLabel

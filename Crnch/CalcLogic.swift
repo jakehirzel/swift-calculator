@@ -16,7 +16,7 @@ struct CalcLogic {
     public private(set) var runningTotal: Float = 0
     
     // Create mutating function to modify the runningTotal based on the desired operation
-    mutating func nextCalc(perform nextOperation: OperandsAndOperators, by nextNumber: Float = 0.0) {
+    mutating func nextCalc(perform nextOperation: OperandsAndOperators, by nextNumber: Float = 0) {
         
         switch nextOperation {
         case .addition:
