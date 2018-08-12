@@ -395,6 +395,10 @@
                                             </tableViewCell>
                                         </prototypes>
                                         <sections/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="i6g-mQ-0ub"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="NRl-0W-60r"/>
+                                        </connections>
                                     </tableView>
                                 </subviews>
                                 <constraints>
