@@ -36,9 +36,9 @@ struct KeyTapLogic {
                 
                 // TODO: Change this!
                 // Limit to thousands place (plus optional decimal and change)
-                else if mainOutputIn.count == 5 && mainOutputIn.contains(".") == false && button.titleLabel?.text != "." {
-                    return currentOperationLog
-                }
+//                else if mainOutputIn.count == 5 && mainOutputIn.contains(".") == false && button.titleLabel?.text != "." {
+//                    return currentOperationLog
+//                }
                     
                 // Otherwise add the characters to the number, update mainOutput, and append to the log
                 else {
