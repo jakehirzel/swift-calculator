@@ -10,6 +10,8 @@ import UIKit
 
 struct KeyTapLogic {
     
+    // TODO: Factor out updating output and removing trailing zeroes; implement guards instead of if lets
+    
     // Create CalcLogic() instance to handle operations
     var calcLogic = CalcLogic()
     
@@ -33,13 +35,7 @@ struct KeyTapLogic {
                     currentOperationLog.operationLog.append(currentOperation)
                     return currentOperationLog
                 }
-                
-                // TODO: Change this!
-                // Limit to thousands place (plus optional decimal and change)
-//                else if mainOutputIn.count == 5 && mainOutputIn.contains(".") == false && button.titleLabel?.text != "." {
-//                    return currentOperationLog
-//                }
-                    
+                                    
                 // Otherwise add the characters to the number, update mainOutput, and append to the log
                 else {
                     currentOperation.number.append(button.titleLabel!.text!)
@@ -88,8 +84,21 @@ struct KeyTapLogic {
                 if currentOperationLog.operationLog.isEmpty {
                     return currentOperationLog
                 }
+                
+                // Pass to nextCalc()
+                calcLogic.nextCalc(perform: keyTapped)
 
-                // TODO: Handle unary operations
+                // Update mainOutput with runningTotal
+                currentOperation.mainOutput = String(calcLogic.runningTotal)
+                
+                // Remove trailing .0 from float cast to string, if any
+                if currentOperation.mainOutput[currentOperation.mainOutput.index(currentOperation.mainOutput.endIndex, offsetBy: -1)] == "0" && currentOperation.mainOutput[currentOperation.mainOutput.index(currentOperation.mainOutput.endIndex, offsetBy: -2)] == "." {
+                    currentOperation.mainOutput.removeLast(2)
+                }
+                
+                // Update log
+                currentOperationLog.operationLog.append(currentOperation)
+                
                 return currentOperationLog
 
             // Handle total
@@ -100,8 +109,18 @@ struct KeyTapLogic {
                     return currentOperationLog
                 }
 
+                // Update mainOutput with runningTotal
+                currentOperation.mainOutput = String(calcLogic.runningTotal)
+                
+                // Remove trailing .0 from float cast to string, if any
+                if currentOperation.mainOutput[currentOperation.mainOutput.index(currentOperation.mainOutput.endIndex, offsetBy: -1)] == "0" && currentOperation.mainOutput[currentOperation.mainOutput.index(currentOperation.mainOutput.endIndex, offsetBy: -2)] == "." {
+                    currentOperation.mainOutput.removeLast(2)
+                }
+                
+                // Update log
+                currentOperationLog.operationLog.append(currentOperation)
+
                 return currentOperationLog
-//                return (mainOutputOut: String(calcLogic.runningTotal), operation: keyTapped)
 
             // Handle info
             case .info:
