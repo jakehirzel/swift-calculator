@@ -43,7 +43,7 @@ struct CalcLogic {
             return
         case .clear:
             // TODO: Add C vs. AC funtionality
-            runningTotal = 0.0
+            runningTotal = 0
         default:
             print("Invalid key passed to function!")
             return
