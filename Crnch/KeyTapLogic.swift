@@ -9,9 +9,7 @@
 import UIKit
 
 struct KeyTapLogic {
-    
-    // TODO: Factor out updating output and removing trailing zeroes
-    
+        
     // Create CalcLogic() instance to handle operations
     var calcLogic = CalcLogic()
     
@@ -44,7 +42,9 @@ struct KeyTapLogic {
                 currentOperation.number.append(button.titleLabel!.text!)
                 currentOperation.mainOutput = currentOperation.number
             }
-            
+        
+        // TODO: Add a fallthrough to eliminate duplicate code
+        
         // Handle binary operation taps
         case .addition, .subtraction, .multiplication, .division:
             
@@ -99,6 +99,8 @@ struct KeyTapLogic {
             if currentOperationLog.operationLog.isEmpty {
                 return currentOperationLog
             }
+            
+            // If last operation in log (log does NOT yet contain the current [total] operation) is a number, look back at the second-to-last operation for the operation, and pass to nextCalc() to update runningTotal.
             
             // Update mainOutput with runningTotal
             currentOperation.mainOutput = String(calcLogic.runningTotal)
